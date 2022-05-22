@@ -15,7 +15,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="TBL_ORDER")
+@Table(name="TBL_RECIPE")
 @Getter
 @Setter
 public class Recipe{
