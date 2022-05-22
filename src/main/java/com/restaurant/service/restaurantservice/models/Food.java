@@ -15,7 +15,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="TBL_ORDER")
+@Table(name="TBL_FOOD")
 @Getter
 @Setter
 public class Food{
@@ -36,6 +36,6 @@ public class Food{
     @JoinColumn(name="ORDER_ID", nullable=false)
     private Order order; 
 
-    @OneToMany(mappedBy="client") //nombre del atributo en la clase B       
+    @OneToMany(mappedBy="food") //nombre del atributo en la clase B       
     private List<Recipe> recipes;
 }

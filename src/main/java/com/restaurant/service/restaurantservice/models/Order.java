@@ -36,6 +36,6 @@ public class Order{
     @JoinColumn(name="RESERVATION_ID", nullable=false)
     private Reservation reservation; 
 
-    @OneToMany(mappedBy="client") //nombre del atributo en la clase B       
+    @OneToMany(mappedBy="order") //nombre del atributo en la clase B       
     private List<Food> foods;
 }
