@@ -1,4 +1,5 @@
 package com.restaurant.service.restaurantservice.models;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -16,29 +17,30 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="TBL_RESERVATION")
+@Table(name="TBL_RESERVATIONS")
 @Getter
 @Setter
-public class Reservation{
+public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    @Column(name = "DATE")    
+
+    @Column(name = "DATE") 
     private LocalDate date;
-    @Column(name = "TYPER_OF_PAYMENT")    
+
+    @Column(name = "TYPE_OF_PAYMENT") 
     private String typeOfPayment;
-    @Column(name = "TOTAL")    
-    private float total;
-    @Column(name = "NUMBER_OF_TABLE")    
-    private short numberOfTable;
-    @Column(name = "OBSERVATION")    
-    private String observation;  
-    
+
+    @Column(name = "TOTAL_RESERVATION") 
+    private Float totalReservation;
+
+    @Column(name = "NUMBER_OF_TABLE") 
+    private int numberOfTable;
+
     @ManyToOne
     @JoinColumn(name="CLIENT_ID", nullable=false)
-    private Client client; 
+    private Client client;
 
-    @OneToMany(mappedBy="reservation") //nombre del atributo en la clase B       
+    @OneToMany(mappedBy="reservation")       
     private List<Order> orders;
 }

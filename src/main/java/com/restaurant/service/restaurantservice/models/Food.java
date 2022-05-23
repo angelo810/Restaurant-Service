@@ -1,4 +1,5 @@
 package com.restaurant.service.restaurantservice.models;
+
 import java.util.List;
 
 import javax.persistence.Column;
@@ -15,27 +16,30 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="TBL_FOOD")
+@Table(name="TBL_FOODS")
 @Getter
 @Setter
-public class Food{
+public class Food {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    @Column(name = "NAME")    
+
+    @Column(name = "NAME") 
     private String name;
-    @Column(name = "PRICE")    
-    private float price;
-    @Column(name = "CATEGORY")    
+
+    @Column(name = "PRICE") 
+    private Float price;
+
+    @Column(name = "CATEGORY") 
     private String category;
-    @Column(name = "OBSERVATION")    
-    private String observation;  
-    
+
     @ManyToOne
     @JoinColumn(name="ORDER_ID", nullable=false)
-    private Order order; 
+    private Order order;
 
-    @OneToMany(mappedBy="food") //nombre del atributo en la clase B       
+    //
+
+    @OneToMany(mappedBy="food")       
     private List<Recipe> recipes;
+     
 }

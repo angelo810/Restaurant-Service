@@ -1,4 +1,6 @@
 package com.restaurant.service.restaurantservice.models;
+
+import java.net.PasswordAuthentication;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -16,22 +18,24 @@ import lombok.Setter;
 @Table(name="TBL_CLIENT")
 @Getter
 @Setter
-public class Client{
+public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column(name = "NAME")    
+    @Column(name = "NAME", nullable = false)    
     private String name;
-    @Column(name = "PHONE")    
-    private int phone;
+
+    @Column(name = "PHONE")  
+    private String phone;
+
     @Column(name = "MAIL")    
     private String mail;
-    @Column(name = "PASSWORD")    
-    private String password;
-    @Column(name = "OBSERVATION")    
-    private String observation;  
     
-    @OneToMany(mappedBy="client") //nombre del atributo en la clase B       
+    @Column(name = "PASSWORD",nullable = false)    
+    private PasswordAuthentication password;
+
+    @OneToMany(mappedBy="client")  
     private List<Reservation> reservations;
+
 }
