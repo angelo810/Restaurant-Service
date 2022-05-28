@@ -1,6 +1,5 @@
 package com.restaurant.service.restaurantservice.models;
 
-import java.net.PasswordAuthentication;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -33,7 +32,7 @@ public class Client {
     private String mail;
     
     @Column(name = "PASSWORD",nullable = false)    
-    private PasswordAuthentication password;
+    private String password;
 
     @OneToMany(mappedBy="client")  
     private List<Reservation> reservations;

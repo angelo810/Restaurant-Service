@@ -1,6 +1,5 @@
 package com.restaurant.service.restaurantservice.dto;
 
-import java.net.PasswordAuthentication;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,5 +13,5 @@ public class ClientDTO {
     private String name;
     private String phone;
     private String mail;
-    private PasswordAuthentication password;
+    private String password;
 }

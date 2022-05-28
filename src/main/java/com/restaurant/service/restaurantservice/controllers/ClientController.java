@@ -69,7 +69,7 @@ public class ClientController {
     public ResponseEntity<?> delete(@PathVariable("id") Long id){
         try {
             service.delete(id);
-            return ResponseEntity.ok().body("Clienten Deleted!");
+            return ResponseEntity.ok().body("Client Deleted!");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e);
         }
