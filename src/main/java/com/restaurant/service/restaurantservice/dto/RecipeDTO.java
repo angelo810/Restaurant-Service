@@ -1,10 +1,16 @@
 package com.restaurant.service.restaurantservice.dto;
 
-public class RecipeDTO {
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+public class RecipeDTO {
     private Long id;
     private String name;
     private String ingredients;
     private String prepare;
-    private String observation;  
+    private String observations;
 }

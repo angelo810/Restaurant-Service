@@ -1,11 +1,18 @@
 package com.restaurant.service.restaurantservice.dto;
 
-public class ClientDTO {
+import java.net.PasswordAuthentication;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class ClientDTO {
     private Long id;
     private String name;
-    private int phone;
+    private String phone;
     private String mail;
-    private String password;  
-    private String observation;  
+    private PasswordAuthentication password;
 }

@@ -1,10 +1,15 @@
 package com.restaurant.service.restaurantservice.dto;
 
-public class FoodDTO {
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+public class FoodDTO {
     private Long id;
     private String name;
-    private float price;
+    private Float price;
     private String category;
-    private String observation; 
 }
