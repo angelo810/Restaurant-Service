@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import com.restaurant.service.restaurantservice.dto.NewOrderDTO;
 import com.restaurant.service.restaurantservice.dto.OrderDTO;
+import com.restaurant.service.restaurantservice.exceptions.ResourceNotFoundException;
 import com.restaurant.service.restaurantservice.models.Order;
 import com.restaurant.service.restaurantservice.repositories.OrderRepository;
 import com.restaurant.service.restaurantservice.services.OrderService;
@@ -40,9 +41,8 @@ public class OrderServiceImpl implements OrderService {
     public OrderDTO retrieve(Long id) throws Exception {
         Optional<Order> order = orderRepository.findById(id);
         if(order.isEmpty()){
-            throw new Exception("Order not found");
+            throw new ResourceNotFoundException("Order not found");
         }
-        //.orElseThrow(()-> new Exception("Exam not found"));
         return modelMapper.map(order.get(), OrderDTO.class);
     }
 
