@@ -75,9 +75,9 @@ export const FoodForm = () => {
     return ( //JSX
       <div className="submit-form">       
           <div>
-            { food.id !== null ? (<h1>Orden Actualizada {food.name}</h1>) : (<h1>Registro de una nueva orden</h1>) }            
+            { food.id !== null ? (<h1>Orden Actualizada {food.name}</h1>) : (<h1>Registro de una nueva Comida</h1>) }            
             <div className="form-group">
-            <label htmlFor="name">Estado de la orden</label>
+            <label htmlFor="name">Nombre de la comida</label>
             <input
               type="text"
               placeholder="Ingrese el estado de la orden"
@@ -88,7 +88,7 @@ export const FoodForm = () => {
               onChange={handleInputChange}
               name="name"
             />
-            <label htmlFor="price">Descripcion de la Orden</label>
+            <label htmlFor="price">Precio de la Comida</label>
             <input            
               type="number"
               className="form-control"

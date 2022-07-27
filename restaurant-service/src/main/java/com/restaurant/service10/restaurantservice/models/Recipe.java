@@ -37,6 +37,5 @@ public class Recipe {
     @JoinColumn(name="ORDER_ID", nullable=false)
     private Order order; 
 
-    @OneToMany(mappedBy = "recipe")
-    private List<Food> foods;
+
 }
